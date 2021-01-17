@@ -3,6 +3,8 @@
     "displayName": "S1C88 Assembler",
     "description": "S1C88 (Used as the basis for the Pokemon mini CPU, known as Minx) syntax highlighting for the flavor used in the official SDK assembler.",
     "version": "0.0.1",
+    "publisher": "zurashu",
+    "repository": "https://github.com/zlash/s1c88-asm",
     "engines": {
         "vscode": "^1.52.0"
     },
@@ -10,16 +12,25 @@
         "Programming Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "s1c88-asm",
-            "aliases": ["S1C88 (Minx) Assembler", "s1c88-asm"],
-            "extensions": [".s1c88.asm"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "s1c88-asm",
-            "scopeName": "source.s1c88-asm",
-            "path": "./syntaxes/s1c88-asm.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "s1c88-asm",
+                "aliases": [
+                    "S1C88 (Minx) Assembler",
+                    "s1c88-asm"
+                ],
+                "extensions": [
+                    ".s1c88.asm"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "s1c88-asm",
+                "scopeName": "source.s1c88-asm",
+                "path": "./syntaxes/s1c88-asm.tmLanguage.json"
+            }
+        ]
     }
 }
