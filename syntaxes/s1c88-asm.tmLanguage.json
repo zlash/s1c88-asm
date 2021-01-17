@@ -1,0 +1,75 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "S1C88 (Minx) Assembler",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#entities"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.semicolon.s1c88-asm",
+					"match": ";.*$"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.op.s1c88-asm",
+					"match": "(?i)\\b(LD|EX|SWAP|ADD|ADC|SUB|SBC|AND|OR|XOR|CP|BIT|INC|DEC|CPL|NEG|MLT|DIV|PACK|UNPACK|SEP|RL|RLC|RR|RRC|SLA|SLL|PUSH\\s+ALL|PUSH\\s+ALE|PUSH|POP\\s+ALL|POP\\s+ALE|POP|JRS\\s+Z|JRS\\s+NZ|JRS\\s+C|JRS\\s+NC|JRS|JRL\\s+Z|JRL\\s+NZ|JRL\\s+C|JRL\\s+NC|JRL|DJR|JP|CARS|CARL|CALL|INT|RETE|RETS|RET|NOP|HALT|SLP)\\b"
+				},
+				{
+					"name": "entity.name.variable.s1c88-asm",
+					"match": "(?i)\\b(A|B|BA|H|L|HL|IX|IY|SP|BR|SC|CC|PC|NB|CB|EP|XP|YP|IP)\\b"
+				},
+				{
+					"name": "keyword.control.s1c88-asm",
+					"match": "(?i)\\b[_a-z][_0-9a-z]*:"
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"name": "constant.numeric.s1c88-asm",
+					"match": "(?i)\\b[0-9][0-9a-f]*h?\\b"
+				}
+			]
+		},
+		"entities": {
+			"patterns": [
+				{
+					"name": "entity.name.function.s1c88-asm",
+					"match": "(?i)\\b[_a-z][_0-9a-z]*\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.s1c88-asm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.s1c88-asm",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.s1c88-asm"
+}
